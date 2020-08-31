@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <title>Daily To-Do App</title>
+
+</head>
+
+<body style="background-image: url(images/back4.jpg);">
+    <div class="sidebar">
+        <a class="active" href="#Home"> <i class="fa fa-home" aria-hidden="true"></i> Homepage
+        </a>
+        <a href="#History">
+            <i class="fa fa-history" aria-hidden="true"></i> History</a>
+
+        <div id="Settings">
+            <a id="Settingsa" style="cursor: pointer;" class="pure-button pure-button-primary" onClick="Setting.showModal()">
+                <i class="fa fa-cog" aria-hidden="true"></i> Settings
+            </a>
+            <dialog id="Setting">
+                <button id="xbtn" title="Close" onClick="Setting.close()" class="pure-button pure-button-primary">
+X                        </button>
+                <h3 class="text-center" style="text-align: center;">Settings</h3>
+                <button id="delete" class="delete" title="Click to delete all your history">Delete History
+                    </button> <button id="reset" class="delete" title="Click to reset app">
+                        Reset App
+                    </button>
+
+            </dialog>
+        </div>
+        <a href="#Feedback">
+            <i class="fa fa-comment" aria-hidden="true"></i> Feedback
+        </a>
+        <!--  <a>
+            <div class="card" style="background-image: url(images/weather.png);     background-size: cover;
+        ">
+                <a class="submit">
+                    <i class='fas fa-sync-alt' style='font-size:24px'></i>
+                    <h1 class="name" id="name"></h1>
+
+                </a>
+                <p class="temp"></p>
+                <p class="desc"></p>
+            </div>
+        </a>
+ -->
+    </div>
+    </div>
+    </div>
+
+    <div class="content-container">
+
+
+        <div class="container-fluid">
+
+
+            <div class="col-md-9">
+                <!-- Main component for a primary marketing message or call to action -->
+
+                <h1 id=Home style="color: #fff;">All Tasks</h1>
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-6 col-12" style="overflow:hidden; overflow-x: hidden; height: 47rem;">
+                            <form action="#">
+
+                                <div class="col-8">
+                                    <input required="" placeholder="Enter New Task" type="text" id="todoInput" class="form-control">
+
+
+
+
+
+                                    <div class="col-4">
+                                        <button id="todoSubmit" title="Click to Add New Task" class="btn w-100 delete">ADD</button>
+                                    </div>
+                            </form>
+
+                            <div class="todo-items">
+                                <ul>
+
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- hompage above -->
+            <div id=History class="col-md-9">
+                <h1>History</h1>
+                <div class="container">
+                    <h1 class="text-center"></h1>
+
+                    <div class="float-container" id="container">
+
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+
+                        <ul id="myUL" class="list-group">
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- history above -->
+
+            <h3 id="Feedback">Feedback</h3>
+
+            <div class="container">
+                <form action="/action_page.php">
+                    <label for="fname"></label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                    <label for="lname"></label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <!-- JS Bootstrap -->
+
+
+        <script>
+            //Search history
+            function myFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    span = li[i].getElementsByTagName("span")[0];
+                    txtValue = span.textContent || span.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/app.js"></script>
+        <script src="js/weather.js"></script>
+
+</body>
+
+</html>

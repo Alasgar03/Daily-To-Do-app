@@ -1,0 +1,368 @@
+/* * {
+    border: 2px solid;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+    .container-fluid {
+        margin-left: -15rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+.content-container {
+    padding-left: 325px;
+    /*         background-image: url("../images/grass9.jpeg");
+ */
+    background-size: 100px 100px;
+    /* width height */
+    display: flex;
+}
+
+
+/* .jumbotron {
+    color: #fff;
+}
+ */
+
+.form-container {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 20px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.back {
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+}
+
+.form-control {
+    width: 44%;
+    height: 2rem;
+}
+
+html,
+body {
+    height: 100%;
+    color: #fff;
+    font-size: larger;
+}
+
+.delete {
+    color: white;
+    height: 4em;
+    width: 100%;
+    padding: 1.5em auto;
+    margin: 1em auto;
+    background-color: teal;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    /* letter-spacing: 1.5em; */
+    transition: all 0.2s cubic-bezier(.4, 0, .2, 1);
+}
+
+#xbtn {
+    border: none;
+    font-size: large;
+}
+
+#todoSubmit {
+    height: 2rem;
+    width: 4rem;
+    float: right;
+    margin-top: -2.7rem;
+}
+
+.todo-items ul li {
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    list-style-type: none;
+    color: black;
+    font-size: 1.6rem;
+    padding-left: 18px;
+    padding: 15px;
+    align-items: center;
+    display: flex;
+}
+
+.form-container {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 20px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-family: serif;
+    text-align: center;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.back {
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.input {
+    text-align: center;
+    margin: 100px auto;
+}
+
+input[type="submit"] {
+    padding: 15px 30px;
+    background: transparent;
+    border: none;
+    border-radius: 1px;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.input input[type="text"] {
+    width: 600px;
+    height: 55px;
+    padding: 5px 10px;
+    background: #e7e7e7;
+    border: none;
+    border-radius: 1px;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card {
+    width: 16%;
+    background: lightskyblue;
+    height: 27vh;
+    margin: 50px auto;
+    border-radius: 20px;
+}
+
+.close {
+    float: right;
+    margin-top: -2px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.card h1 {
+    padding: 5px 0;
+    text-align: end;
+    color: white;
+    margin-top: -1rem;
+}
+
+.card p {
+    text-align: center;
+    margin: 14px 0px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 7rem;
+    color: #fff;
+    margin-bottom: -10rem;
+    font-family: sans-serif;
+}
+
+.fa-sync-alt:before {
+    color: white;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 92%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 20px;
+    height: 50rem;
+    margin-top: -3rem;
+}
+
+
+/* #tick {} */
+
+#todoEdit {
+    background-color: lightsteelblue;
+    height: 2rem;
+    width: 2rem;
+    width: auto;
+    margin-bottom: -2px;
+    border: none;
+    border-radius: 12px;
+}
+
+.donebtn {
+    height: 2rem;
+    width: 2rem;
+}
+
+#Feedback {
+    padding: 15px;
+}
+
+#Home {
+    padding: 25px;
+}
+
+.edit-list {
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1450px) {
+    input[type=text],
+    select,
+    textarea {
+        width: 71%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        font-size: 1.2rem;
+        border: none;
+        border-bottom: 1px solid;
+        border-radius: 0;
+    }
+}
